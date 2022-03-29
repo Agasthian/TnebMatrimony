@@ -1,0 +1,21 @@
+{
+  "name": "matrimony-server",
+  "version": "1.0.0",
+  "description": "Node js bakend server for a matrimony application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev":"nodemon index.js" 
+  },
+  "author": "Agasthian",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "passport": "^0.5.2",
+    "passport-google-oauth20": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
