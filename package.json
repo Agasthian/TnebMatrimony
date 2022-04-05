@@ -11,6 +11,7 @@
   "author": "Agasthian",
   "license": "ISC",
   "dependencies": {
+    "cookie-session": "^2.0.0",
     "express": "^4.17.3",
     "mongoose": "^6.2.9",
     "passport": "^0.5.2",

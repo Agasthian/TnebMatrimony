@@ -9,7 +9,16 @@ module.exports = (app) => {
 
     //Express route - google callback
     app.get('/auth/google', passport.authenticate('google', {scope: ['profile','email']}))
+
     //2nd Express route to handle callback from google
-    app.get('/auth/google/callback', passport.authenticate('google'))
+    app.get('/auth/google/callback',
+    passport.authenticate('google')
+    );
+
+
+    app.get('/api/current_user', (req, res)=> {
+        res.send(req.user);
+    })
+ 
 }
 
