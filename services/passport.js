@@ -29,18 +29,28 @@ passport.use(new GoogleStrategy({
     callbackURL: '/auth/google/callback',
     proxy: true,
 
-}, (accessToken,refreshToken,profile, done)=> {
+}, async(accessToken,refreshToken,profile, done)=> {
 
-    User.findOne({ googleId : profile.id })
-    .then((exisitingUser) => {
-        if(exisitingUser) {
-            //We already have the profile
-            done(null, exisitingUser)
-        } else {
-            // Profile not found so save it
-            new User({ googleId : profile.id}).save().then(user => done(null, user))
-        }
-    })
+    const exisitingUser = await User.findOne({ googleId : profile.id });
+
+    if(exisitingUser){
+        return done(null,exisitingUser);
+    }
+
+    const user = await new User({ googleId : profile.id}).save()
+    done(null, user)
+
+    //Old promise based code
+    // User.findOne({ googleId : profile.id })
+    // .then((exisitingUser) => {
+    //     if(exisitingUser) {
+    //         //We already have the profile
+    //         done(null, exisitingUser)
+    //     } else {
+    //         // Profile not found so save it
+    //         new User({ googleId : profile.id}).save().then(user => done(null, user))
+    //     }
+    // })
 
  
     // console.log('accessToken:', accessToken);
