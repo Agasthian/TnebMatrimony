@@ -6,10 +6,11 @@ import reduxThunk from 'redux-thunk'
 
 import './index.css';
 import App from './App';
+import reducers from './reducers/index'
 
 import reportWebVitals from './reportWebVitals';
 
-const store = createStore( ()=>[], {}, applyMiddleware())
+const store = createStore( reducers, {}, applyMiddleware(reduxThunk))
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
