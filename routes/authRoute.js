@@ -12,7 +12,10 @@ module.exports = (app) => {
 
     //2nd Express route to handle callback from google
     app.get('/auth/google/callback',
-    passport.authenticate('google')
+        passport.authenticate('google'),
+        (req,res)=> {
+            res.redirect('/dash')
+        }
     );
 
 
