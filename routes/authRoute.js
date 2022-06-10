@@ -3,9 +3,6 @@ const passport = require('passport');
 module.exports = (app) => {
 
     //Route
-    app.get('/', (req, res)=> {
-        res.send('Helllo World',)
-    } )
 
     //Express route - google callback
     app.get('/auth/google', passport.authenticate('google', {scope: ['profile','email']}))
