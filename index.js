@@ -32,6 +32,17 @@ app.use(passport.session());
 //authRoutes(app); //Refactor the code
 require('./routes/authRoute')(app)
 
+//Production Routes
+if(process.env.NODE_ENV === 'production'){
+    //Express will serve the build assets - main.js/css
+    app.use(express.static('client/build'));
+
+    //Express will serve index.html if it dosnt recoganise the route
+    const path = require('path');
+    app.get( '*', (req,res)=>{
+        res.send(path.resolve(__dirname, 'client', 'build','index.html'))
+    })
+}
 
 const PORT =  process.env.PORT || 5000
 app.listen(PORT)
