@@ -1,15 +1,20 @@
 import React, {useEffect} from 'react'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import {connect} from 'react-redux'
+import { ThemeProvider } from 'styled-components'
 
-import Header from './components/Header'
-import './App.css';
+import GlobalStyles from './themes/globalStyles'
+import theme from './themes/theme'
+import Landing from './pages/Landing/landing.component'
+import Dashboard from './pages/Dashboard/dash.components'
+import Login from './pages/Login/login.components'
+
+
 import * as actions from './action'
 
 
-const Dashboard = () => <h2> Dashboard</h2>
 const SurverNew = () => <h2> SurverNew</h2>
-const Landing = () => <h2> Landing</h2>
+
 
 const App = (props)=> {
   useEffect(()=>{
@@ -17,16 +22,21 @@ const App = (props)=> {
   })
 
   return (
-    <div>
+    <ThemeProvider theme={theme}>
+    <GlobalStyles/>
+      
+      <>
       <BrowserRouter>
-      <Header/>
         <Routes>
           <Route path='/' element={<Landing/>}/>
+          <Route path='/login' element={<Login/>} />
           <Route path='/dash' element={<Dashboard/>}/>
           <Route path='/survey/new' element={<SurverNew/>}/>
         </Routes>
       </BrowserRouter>
-    </div>
+      </>
+
+    </ThemeProvider>
   );
 }
 

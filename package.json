@@ -4,13 +4,13 @@
   "description": "Node js bakend server for a matrimony application",
   "main": "index.js",
   "engines": {
-    "node": "17.x",
+    "node": "16.x",
     "npm": "8.x"
   },
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "client":"npm run start --prefix client",
+    "client": "npm run start --prefix client1",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
@@ -22,7 +22,9 @@
     "express": "^4.17.3",
     "mongoose": "^6.2.9",
     "passport": "^0.5.2",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "stripe": "^9.11.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

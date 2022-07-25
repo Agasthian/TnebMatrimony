@@ -1,5 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 const mongoose = require('mongoose');
 const keys = require('../config/keys');
 
@@ -22,7 +23,7 @@ passport.deserializeUser((id, done)=> {
 
 
 
-//Passport Configuration
+//Passport Configuration For Google O auth
 passport.use(new GoogleStrategy({
     clientID : keys.googleClientID,
     clientSecret : keys.googleClientSecret,
@@ -31,6 +32,7 @@ passport.use(new GoogleStrategy({
 
 }, async(accessToken,refreshToken,profile, done)=> {
 
+     //check user table for anyone with a Google ID of profile.id
     const exisitingUser = await User.findOne({ googleId : profile.id });
 
     if(exisitingUser){
@@ -59,3 +61,25 @@ passport.use(new GoogleStrategy({
     
     }
 ));
+
+//Passport Configuration For FaceBook O auth
+passport.use(new FacebookStrategy({
+    clientID: keys.facebookAppID,
+    clientSecret: keys.facebookAppSecret,
+    callbackURL: "http://localhost:3000/auth/facebook/callback"
+  },
+
+  async(accessToken,refreshToken,profile, cb)=> {
+     //check user table for anyone with a facebook ID of profile.id
+    const exisitingUser = await User.findOne({ facebookId : profile.id });
+
+    if(exisitingUser){
+        return done(null,exisitingUser);
+    }
+    //No user was found... so create a new user with values from Facebook (all the profile. stuff)
+    const user = await new User({ facebookId : profile.id}).save()
+    done(null, user)
+
+   }
+));
+

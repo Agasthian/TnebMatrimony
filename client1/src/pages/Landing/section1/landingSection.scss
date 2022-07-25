@@ -1,0 +1,34 @@
+.section1Wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    height: 75vh;
+    width: 100%;
+
+    .section1Left{
+        background-image: url('../../../assets/land1.png');
+        background-position: center;
+        background-size: cover;
+        flex: 0 0 60%;
+    }
+    .section1Right{
+        background-color: #e7e3e3;
+        flex: 0 0 40%;
+        
+
+        &_register{
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 7px;
+            box-shadow: 0rem 0px 8px rgba(7, 49, 69, .1);
+
+            &-card{
+                background-color: #66bb6a;
+                height: 45rem;
+                flex: 0 0 35%;
+                border-radius: 7px;
+                color: #fff;
+                padding: 2rem 3rem;
+            }
+        }
+    }
+}

@@ -3,7 +3,12 @@ const mongoose = require('mongoose');
 
 //Schema defnition - mongoose documentation
 const userSchema = new mongoose.Schema({
-    googleId : String
+    googleId : String,
+    facebookId : String,
+    credits: {
+        type: Number,
+        default: 0
+    }
 })
 
 // Model Creation
