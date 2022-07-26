@@ -48,6 +48,14 @@
       background-color: #fff;
     }
   }
+  &--orange {
+    color: $color-white;
+    background-image: linear-gradient(to right bottom, #f58320,#ff9902);
+
+    &::after {
+      background-color: #fff;
+    }
+  }
 
   &::after {
     content: '';
@@ -91,3 +99,5 @@
     transform: translateY(0);
   }
 }
+
+

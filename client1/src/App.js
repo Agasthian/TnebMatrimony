@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 
 import './styles/main.scss'
 
-import Landing from './pages/Landing/landing.component'
+import Home from './pages/Home/home.component'
 import Dashboard from './pages/Dashboard/dash.components'
 import Login from './pages/Login/login.components'
 
@@ -26,7 +26,7 @@ const App = (props)=> {
     <>
        <BrowserRouter>
          <Routes>
-           <Route path='/' element={<Landing/>}/>
+           <Route path='/' element={<Home/>}/>
            <Route path='/login' element={<Login/>} />
             <Route path='/dash' element={<Dashboard/>}/>
            <Route path='/survey/new' element={<SurverNew/>}/>

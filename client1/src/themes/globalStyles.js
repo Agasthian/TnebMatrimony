@@ -35,6 +35,7 @@ const GlobalStyles = createGlobalStyle`
     height: 100%;
     overflow: visible;
     --primary: ${props => props.theme.colors.main1};
+    --primary1: #55c57a;
     --secondary: ${props => props.theme.colors.main2};
     --navbar: rgba(255, 255, 255, 0.95);
     --text: ${props => props.theme.colors.dark1};
