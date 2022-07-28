@@ -66,7 +66,8 @@ passport.use(new GoogleStrategy({
 passport.use(new FacebookStrategy({
     clientID: keys.facebookAppID,
     clientSecret: keys.facebookAppSecret,
-    callbackURL: "http://localhost:3000/auth/facebook/callback"
+    callbackURL:'/auth/google/callback',
+    proxy : true,
   },
 
   async(accessToken,refreshToken,profile, cb)=> {
