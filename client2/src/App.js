@@ -2,24 +2,21 @@ import React, {useEffect} from 'react'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import {connect} from 'react-redux'
 
+import * as actions from './action'
 import './styles/main.scss'
 
-import Home from './pages/Home/home.component'
-import Dashboard from './pages/Dashboard/dash.components'
-import Login from './pages/Login/login.components'
-
-import * as actions from './action'
-
+import Home from './pages/home/home.components'
+import Dashboard from './pages/dashboard/dash.components'
+import Login from './pages/login/login.components'
 
 const SurverNew = () => <h2> SurverNew</h2>
 
+const App = (props) => {
 
-
-const App = (props)=> {
-
-  //Fetches user data on app load - fetch user is accessed via action cretor of redux library
-  useEffect(()=>{
+   //Fetches user data on app load - fetch user is accessed via action cretor of redux library
+   useEffect(()=>{
     props.fetchUser();
+    console.log('props', props)
   })
 
   return (
@@ -32,10 +29,8 @@ const App = (props)=> {
            <Route path='/survey/new' element={<SurverNew/>}/>
          </Routes>
        </BrowserRouter>
-    </>    
-    
-      
-  );
+    </>
+  )
 }
 
 export default connect(null,actions)(App);
