@@ -26,7 +26,7 @@ const Header = (props) => {
     <div className="headerWrapper">
       <div className='headerFlexBox'>
         <div className='headerFlexBox_Left'>
-          <h2><Link to='/'>TNEB Matrimony</Link></h2>
+          <h2><Link to='/'>Sai Matrimony</Link></h2>
         </div>
         <div className="headerFlexBox_Center">
           <ul>

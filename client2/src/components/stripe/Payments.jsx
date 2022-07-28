@@ -9,8 +9,8 @@ const Payments = (props) => {
   return (
     <>
         <StripeCheckout
-            name='Emaily'
-            description='$5 for 5 email credits'
+            name='Sai Matrimony'
+            description='Rs.500 for 20 Profile credits'
             amount={500}
             token={token => props.handleToken(token)}
             stripeKey={process.env.REACT_APP_STRIPE_KEY}

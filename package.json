@@ -1,7 +1,7 @@
 {
   "name": "matrimony-server",
   "version": "1.0.0",
-  "description": "Node js bakend server for a matrimony application",
+  "description": "Node js backend server for a matrimony application",
   "main": "index.js",
   "engines": {
     "node": "16.x",
