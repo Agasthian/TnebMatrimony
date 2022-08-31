@@ -4,7 +4,12 @@ import {Helmet} from 'react-helmet'
 import {connect} from 'react-redux'
 
 import Layout from '../../components/layout/layout'
+import DashHeader from './dashSection1/dashHeader';
+import DashSearch from './dashSection2/dashSearch';
+import DashCardList from './dashSection3/dashCardList';
 import Payments from '../../components/stripe/Payments'
+
+import './dash.styles.scss'
 
 const Dashboard = (props) => {
   return (
@@ -12,7 +17,11 @@ const Dashboard = (props) => {
       <Helmet>
         <title>TNEB Matrimony | Dashboard | Sai Matrimony</title>
       </Helmet>
-
+      <DashHeader/>
+      <div className="container">
+        <DashSearch/>
+        <DashCardList/>
+      </div>
         <Payments/>
         <p>Credits {props.auth.credits}</p>
     

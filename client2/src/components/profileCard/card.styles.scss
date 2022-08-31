@@ -1,0 +1,23 @@
+.cardWrapper{
+    
+    height: 30rem;
+    width: 22rem;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #e7e7e7;
+    transition: all 0.2s ease-in-out;
+
+    &:hover{
+        box-shadow: 0 1rem 1.4rem #0000004f;
+        transition: all 0.2s ease-in-out;
+    }
+    
+    &_img{
+        padding: 2rem 0;
+        border-radius: 50%;
+        width: 65%;
+    }
+    h3{
+        padding-bottom: 1rem;
+    }
+}
