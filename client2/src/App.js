@@ -8,8 +8,9 @@ import './styles/main.scss'
 import Home from './pages/home/home.components'
 import Dashboard from './pages/dashboard/dash.components'
 import Login from './pages/login/login.components'
+import Membership from './pages/membership/member.component';
 
-const SurverNew = () => <h2> SurverNew</h2>
+
 
 const App = (props) => {
 
@@ -26,7 +27,8 @@ const App = (props) => {
            <Route path='/' element={<Home/>}/>
            <Route path='/login' element={<Login/>} />
             <Route path='/dash' element={<Dashboard/>}/>
-           <Route path='/survey/new' element={<SurverNew/>}/>
+            <Route path='/member'element={<Membership/>}/>
+           
          </Routes>
        </BrowserRouter>
     </>
