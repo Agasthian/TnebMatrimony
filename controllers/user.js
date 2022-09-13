@@ -34,7 +34,7 @@ exports.allUsers = (req, res)=>{
                 error : err
             })
         }
-        res.json({users: users})
+        res.json(users)
     }).select("name email created updated")
 }
 

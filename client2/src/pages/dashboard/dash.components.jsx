@@ -20,6 +20,10 @@ const Dashboard = (props) => {
       <DashHeader/>
       <div className="container">
         <DashSearch/>
+        <h2 className="ui header">
+            All Users
+        </h2>
+        <div className="ui divider"></div>
         <DashCardList/>
       </div>
         <Payments/>

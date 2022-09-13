@@ -7,7 +7,7 @@ const router = express.Router()
 
 router.get('/users', allUsers)
 router.get("/user/:userId", requireSignin , getUser)
-router.put("/user/:userId", requireSignin , updateUser)
+router.put("/user/edit/:userId" , updateUser)
 router.delete("/user/:userId", requireSignin , deleteUser)
 
 

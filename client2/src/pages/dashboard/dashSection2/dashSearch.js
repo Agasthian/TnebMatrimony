@@ -11,7 +11,7 @@ const DashSearch = () => {
                     <label className='form_label'>I am a</label>
                         <select className='form_select'>
                             <option>Select Gender</option>
-                            <option value="male" selected>Male</option>
+                            <option value="male" >Male</option>
                             <option value="female">Female</option>
                             <option value="others">Others</option>
                         </select>
@@ -23,7 +23,7 @@ const DashSearch = () => {
                         <select className='form_select'>
                             <option>Select Gender</option>
                             <option value="male">Male</option>
-                            <option value="female" selected>Female</option>
+                            <option value="female" >Female</option>
                             <option value="others">Others</option>
                         </select>
                     
@@ -33,7 +33,7 @@ const DashSearch = () => {
                     <div class="searchForm__ip3-flex">
                         <div class="col-6">                            
                             <select className='form_select'>
-                                <option value="18" selected>18</option>
+                                <option value="18">18</option>
                                 <option value="19">19</option>
                                 <option value="20">20</option>
                                 <option value="21">21</option>
@@ -67,7 +67,7 @@ const DashSearch = () => {
                                 <option value="22">22</option>
                                 <option value="23">23</option>
                                 <option value="24">24</option>
-                                <option value="25" selected>25</option>
+                                <option value="25">25</option>
                                 <option value="26">26</option>
                                 <option value="27">27</option>
                                 <option value="28">28</option>

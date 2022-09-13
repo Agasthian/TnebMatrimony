@@ -6,6 +6,12 @@ const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const expressValidator = require('express-validator')
 const morgan = require("morgan")
+const fs = require('fs')
+const cors = require('cors')
+
+
+/** Express App start */
+const app = express();
 
 
 require('./models/user')
@@ -18,6 +24,18 @@ const postRoutes = require('./routes/post')
 const authRoutes = require('./routes/auth')
 const userRoutes = require('./routes/user')
 
+//apiDocs
+app.get('/', (req,res)=>{
+  fs.readFile('docs/apiDocs.json', (err, data)=>{
+    if(err){
+      res.status(400).json({
+        error: err
+      })
+    }
+    const docs = JSON.parse(data)
+    res.json(docs)
+  })
+})
 
 /** Connect Mongo DB */
 mongoose.connect(keys.mongoURI, {})
@@ -26,8 +44,6 @@ mongoose.connect(keys.mongoURI, {})
 
 
 
-/** Express App start */
-const app = express();
 
 
 /** Middleware - Morgan - devopment lib - sec */
@@ -35,6 +51,7 @@ app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(cookieParser())
 app.use(expressValidator())
+app.use(cors())
 //middleware Routes
 app.use('/', postRoutes)
 app.use('/', authRoutes)
