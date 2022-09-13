@@ -1,8 +1,10 @@
 //Holds the auth logic - using local storage -then imported into their components - ryan
 
+
+//const url =`${process.env.REACT_APP_API_URL}/user/${userId}`
 //imported into src> pages> signup>
 export const signup = user => {
-    return fetch('http://localhost:5000/signup', {
+    return fetch(`${process.env.REACT_APP_API_URL}/signup`, {
         method: 'POST',
         headers:{
         Accept: 'application/json',
@@ -19,7 +21,7 @@ export const signup = user => {
 //to reduce code complex - fetch is writtern in seperate method and called inside handle submit
 //imported into src> pages> signin>
 export const signin = user => {
-    return fetch('http://localhost:5000/signin', {
+    return fetch(`${process.env.REACT_APP_API_URL}/signin`, {
         method: 'POST',
         headers:{
             Accept: 'application/json',
@@ -50,7 +52,7 @@ export const signout = (next) => {
     if(typeof window !== "undefined") localStorage.removeItem('jwt')
     next()
   
-    return fetch('http://localhost:5000/signout', {
+    return fetch(`${process.env.REACT_APP_API_URL}/signout`, {
         method: "GET"
     })
     .then(response => {
