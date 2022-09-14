@@ -30,7 +30,31 @@ const userSchema = new mongoose.Schema({
        type: Date,
        default: Date.now
    },
-   updated: Date
+   updated: Date,
+   about:String,
+   gender:String,
+   mobile:Number,
+   dateofbirth:Date,
+   createdfor:String,
+   religion:String,
+   mothertounge:String,
+   caste:String,
+   subCaste:String,
+   gothram:String,
+   dosham:String,
+   maritalStatus:String,
+   height:Number,
+   familyStatus:String,
+   familyType:String,
+   familyValues:String,
+   disablity:String,
+   education:String,
+   employedIn:String,
+   occupation:String,
+   income:String,
+   workLocation:String,
+   state:String,
+   city:String   
 })
 
 /**

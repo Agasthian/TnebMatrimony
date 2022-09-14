@@ -13,6 +13,8 @@ import Signup from './pages/signup/Signup';
 import Signin from './pages/signin/Signin';
 import Profile from './pages/profile/profile'
 import EditProfile from './pages/editProfile/editProfile';
+import ProfileFill from './pages/profileFill/profileFill';
+
 
 
 
@@ -36,6 +38,7 @@ const App = (props) => {
             <Route path='/signin' element={<Signin/>} />
             <Route path='/user/:userId' element={<Profile/>} />
             <Route path='/user/edit/:userId' element={<EditProfile/>} />
+            <Route path='/signupform' element={<ProfileFill/>} />
          </Routes>
        </BrowserRouter>
     </>

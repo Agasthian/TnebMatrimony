@@ -75,8 +75,8 @@
   }
   
    td,  th {
-    border: 1px solid #ddd;
-    padding: 8px;
+    //border: 1px solid #ddd;
+    //padding: 8px;
   }
   
    tr:nth-child(even){background-color: #f2f2f2;}
@@ -84,10 +84,13 @@
    tr:hover {background-color: #ddd;}
   
    th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    //padding-top: 12px;
+    //padding-bottom: 12px;
     background-color: #4CAF50;
     color: white;
-    height:30px;
-    font-family:Poppins;
+    //height:30px;
+    //font-family:Poppins;
+  }
+  .ui.form{
+    font-size: 1.4rem;
   }
