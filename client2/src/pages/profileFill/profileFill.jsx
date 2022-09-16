@@ -1,9 +1,9 @@
 import React,{useState, useEffect} from 'react'
+import axios from 'axios'
+import * as Yup from 'yup';
 import {Helmet} from 'react-helmet'
 import { Navigate, useParams} from 'react-router-dom'
-import axios from 'axios'
 import { Formik ,Field, Form, ErrorMessage } from 'formik'
-import * as Yup from 'yup';
 
 import {isAuthenticated} from '../../auth'
 import Layout from '../../components/layout/layout'
@@ -109,7 +109,7 @@ const postData = async (value) => {
   return (
     <Layout>
       <Helmet>
-          <title>TNEB Matrimony | Dashboard | Sai Matrimony</title>
+          <title>TNEB Matrimony | Profile Edit | Sai Matrimony</title>
       </Helmet>
       <SubHeader heading='Profile'/>
       <br/>

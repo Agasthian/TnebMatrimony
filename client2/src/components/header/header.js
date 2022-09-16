@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink,useNavigate } from 'react-router-dom'
 import {connect} from 'react-redux'
 
 import {signout, isAuthenticated} from '../../auth'
@@ -10,6 +10,9 @@ import './header.styles.scss'
 
 const Header = (props) => {
   
+  
+  let navigate = useNavigate();
+
   // const renderContent=() =>{
   //   //this render content uses redux state to find out  user signedin/out 
   //   //- currentlty app using local storage so it is commented out
@@ -42,29 +45,29 @@ const Header = (props) => {
         </div>
         <div className="headerFlexBox_Center">
           <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/dash'>Dashboard</Link></li>
-            <li><Link to='/member'>Membership</Link></li>
-            <li><Link to='/'>Contact</Link></li>
+            <li><NavLink to='/'>Home</NavLink></li>
+            <li><NavLink to='/dash'>Dashboard</NavLink></li>
+            <li><NavLink to='/member'>Membership</NavLink></li>
+            <li><NavLink to='/contact'>Contact Us</NavLink></li>
           </ul>
         </div>
         <div className='headerFlexBox_Right'>
           {/* {renderContent()} */}
-          {/* <Link to='/signup'> <button className="headerRightBtn btn"> Sign Up</button> </Link> */}
+          {/* <NavLink to='/signup'> <button className="headerRightBtn btn"> Sign Up</button> </NavLink> */}
 
           {!isAuthenticated() && (
             <>
-              <Link to='/signin'>Sign In</Link>   
+              <NavLink to='/signin'>Sign In</NavLink>   
               <Link to='/signup'> <button className="headerRightBtn btn"> Sign Up</button> </Link>
             </>
           )}
 
           {isAuthenticated() && (
             <>
-              <Link to={`/user/${isAuthenticated().user._id}`}>
+              <NavLink to={`/user/${isAuthenticated().user._id}`}>
                   {`${isAuthenticated().user.name}'s profile`}
-              </Link>
-              <a style={{marginLeft:'15px'}} onClick={()=>{signout( ()=>{} )}}>Signout</a>
+              </NavLink>
+              <a style={{marginLeft:'15px'}} onClick={()=>{signout( ()=> navigate('/') )}}>Signout</a>
             </>
           )}
 

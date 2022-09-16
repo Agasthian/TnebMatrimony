@@ -14,8 +14,7 @@ import Signin from './pages/signin/Signin';
 import Profile from './pages/profile/profile'
 import EditProfile from './pages/editProfile/editProfile';
 import ProfileFill from './pages/profileFill/profileFill';
-
-
+import Contact from './pages/contact/contact';
 
 
 const App = (props) => {
@@ -39,6 +38,7 @@ const App = (props) => {
             <Route path='/user/:userId' element={<Profile/>} />
             <Route path='/user/edit/:userId' element={<EditProfile/>} />
             <Route path='/signupform/:userId' element={<ProfileFill/>} />
+            <Route path='/contact' element={<Contact/>} />
          </Routes>
        </BrowserRouter>
     </>

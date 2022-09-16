@@ -1,5 +1,7 @@
-//Holds the auth logic - using local storage -then imported into their components - ryan
+import { Navigate } from 'react-router-dom';
 
+
+//Holds the auth logic - using local storage -then imported into their components - ryan
 
 //const url =`${process.env.REACT_APP_API_URL}/user/${userId}`
 //imported into src> pages> signup>
@@ -48,7 +50,7 @@ export const authenticate = (jwt, next) => {
 
   // Sign out  //imported into src> components> header>
 export const signout = (next) => {
-
+    console.log('next', next)
     if(typeof window !== "undefined") localStorage.removeItem('jwt')
     next()
   

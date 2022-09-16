@@ -8,6 +8,10 @@
     a{
         color:#f7f7f7;
     }
+    .active{
+        background-color: #ffb900;
+        padding: 0.5rem 1rem;
+    }
 }
 .headerFlexBox{
     display: flex;
@@ -25,17 +29,18 @@
         ul{
             display: flex;
             justify-content: space-between;
-            width: 30rem;
+            
 
             li{
                 list-style: none;
+                margin-right: 2rem;
 
                 a{
                     font-weight: 600;
                     font-size: 1.5rem;
 
                   &:hover{
-                    color:#BE8A6A;
+                    color:#000;
                     cursor: pointer;
                     transition: 0.2s ease-in;
                   }  
