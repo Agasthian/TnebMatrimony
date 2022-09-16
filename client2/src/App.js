@@ -38,7 +38,7 @@ const App = (props) => {
             <Route path='/signin' element={<Signin/>} />
             <Route path='/user/:userId' element={<Profile/>} />
             <Route path='/user/edit/:userId' element={<EditProfile/>} />
-            <Route path='/signupform' element={<ProfileFill/>} />
+            <Route path='/signupform/:userId' element={<ProfileFill/>} />
          </Routes>
        </BrowserRouter>
     </>

@@ -54,7 +54,8 @@ const userSchema = new mongoose.Schema({
    income:String,
    workLocation:String,
    state:String,
-   city:String   
+   city:String,
+   otherCommunity:Boolean   
 })
 
 /**

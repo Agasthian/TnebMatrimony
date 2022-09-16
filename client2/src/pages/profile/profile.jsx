@@ -120,12 +120,17 @@ const Profile = () => {
                 </thead>
                 <tbody>
                     <tr>
-                    <td><h5>Caste</h5></td>
-                    <td>{profile.caste}</td>                    
+                        <td><h5>Caste</h5></td>
+                        <td>{profile.caste}</td>                    
                     </tr>
                     <tr>
-                    <td><h5>SubCaste</h5></td>
-                    <td>{profile.subCaste}</td>                    
+                        <td><h5>Willing to marry from  <br/> other Community also</h5></td>
+                        <td>{profile.otherCommunity
+                        }</td>                    
+                    </tr>                    
+                    <tr>
+                        <td><h5>SubCaste</h5></td>
+                        <td>{profile.subCaste}</td>                    
                     </tr>
                     <tr>
                         <td><h5>Gothram</h5></td>
@@ -148,12 +153,12 @@ const Profile = () => {
                 </thead>
                 <tbody>
                     <tr>
-                    <td><h5>Marital Status</h5></td>
-                    <td>{profile.maritalStatus}</td>                    
+                        <td><h5>Marital Status</h5></td>
+                        <td>{profile.maritalStatus}</td>                    
                     </tr>
                     <tr>
-                    <td><h5>Height</h5></td>
-                    <td>{profile.height} cms</td>                    
+                        <td><h5>Height</h5></td>
+                        <td>{profile.height} cms</td>                    
                     </tr>
                     <tr>
                         <td><h5>Family Status</h5></td>
@@ -223,7 +228,7 @@ const Profile = () => {
                 </div>
                 {isAuthenticated().user && isAuthenticated().user._id === profile._id &&(
                     <>
-                      <Link to='/signupform'>
+                      <Link to={`/signupform/${profile._id}`}>
                           <button className='ui orange button'>Fill profile Details</button>
                       </Link>   
                       <Link to={`/user/edit/${profile._id}`}>

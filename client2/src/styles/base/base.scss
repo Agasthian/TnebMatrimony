@@ -63,20 +63,29 @@
     color:rgba(56, 60, 80, 0.9);
   }
   
-    h1,h2,h3,h4,h5{
-      font-family: $font-main;
-    }
+  //*********h1,h2,h3,h4,h5*********//
+  h1,h2,h3,h4,h5{
+    font-family: $font-main;
+  }
+  h3{
+    font-size: 1.5rem;
+  }
+  h5{
+    font-size: 1.3rem;
+  }
+
   
-  
+  //**********TABLE************//
   table{
-    border-collapse: collapse;
-    width: 100%;
-    text-align:center;
+    // border-collapse: collapse;
+    // width: 100%;
+    // text-align:center;
   }
   
    td,  th {
     //border: 1px solid #ddd;
     //padding: 8px;
+    font-size: 1.4rem;
   }
   
    tr:nth-child(even){background-color: #f2f2f2;}
