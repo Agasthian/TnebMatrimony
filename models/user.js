@@ -37,7 +37,7 @@ const userSchema = new mongoose.Schema({
    about:String,
    gender:String,
    mobile:Number,
-   dateofbirth:Date,
+   dateofbirth:String,
    createdfor:String,
    religion:String,
    mothertounge:String,

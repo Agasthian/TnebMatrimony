@@ -73,23 +73,27 @@ const Profile = () => {
                 </thead>
                 <tbody>
                     <tr>
-                    <td><h5>Name</h5></td>
-                    <td>{profile.name}</td>                    
+                        <td><h5>Name</h5></td>
+                        <td>{profile.name}</td>                    
                     </tr>
                     <tr>
-                    <td><h5>E mail</h5></td>
-                    <td>{profile.email}</td>                    
+                        <td><h5>E mail</h5></td>
+                        <td>{profile.email}</td>                    
                     </tr>
+                    <tr>
+                        <td><h5>About</h5></td>
+                        <td>{profile.about} </td>
+                    </tr>                    
                     <tr>
                         <td><h5>Mobile</h5></td>
                         <td>{profile.mobile}</td>
                     </tr>
                     <tr>
                         <td><h5>Date of Birth</h5></td>
-                        <td></td>
+                        <td>{profile.dateofbirth}</td>
                     </tr>
                     <tr>
-                        <td><h5>Date of Birth</h5></td>
+                        <td><h5>Gender</h5></td>
                         <td>{profile.gender}</td>
                     </tr>
                     <tr>

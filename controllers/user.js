@@ -54,6 +54,7 @@ exports.getUser = (req, res)=>{
     //making it availabe in response.json.
     req.profile.hashed_password = undefined
     req.profile.salt = undefined
+    req.profile.avatar=undefined
     return res.json(req.profile)
 }
 

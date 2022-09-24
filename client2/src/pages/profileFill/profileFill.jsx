@@ -164,8 +164,8 @@ const postData = async (value) => {
                     </div>   
                     {/* Date of birth */}
                     <div className="field">
-                      <label htmlFor="dob">Date of Birth</label>
-                      <Field name="dob" type="text" />
+                      <label htmlFor="dateofbirth">Date of Birth</label>
+                      <Field name="dateofbirth" type="text" placeholder='dd/mm/yyyy' />
                     </div>
                     {/* Gender */}
                     <div className="field">
@@ -179,8 +179,9 @@ const postData = async (value) => {
                     <div className="field">
                         <label htmlFor="mothertounge">Mother Tounge</label>
                         <Field name="mothertounge" as="select" className="my-select">
+                            <option >Select One</option>
                             <option value="Tamil">Tamil</option>
-                            <option value='Telegu'>Telegu</option>
+                            <option value='Telugu'>Telugu</option>
                             <option value='Malayalam'>Malayam</option>
                             <option value='Kanndiga'>Kannadiga</option>
                             <option value="Hindi">Hindi</option>
@@ -195,6 +196,7 @@ const postData = async (value) => {
                     <div className="field">
                         <label htmlFor="religion">Religion</label>
                         <Field name="religion" as="select" className="my-select">
+                            <option >Select One</option>
                             <option value="Hindu">Hindu</option>
                             <option value="Islam">Islam</option>
                             <option value="Christianity">Christianity</option>
@@ -208,6 +210,7 @@ const postData = async (value) => {
                     <div className="field">
                         <label htmlFor="createdfor">Profile created for</label>
                         <Field name="createdfor" as="select" className="my-select">
+                            <option >Select One</option>
                             <option value="myself">Myself</option>
                             <option value='daughter'>Daughter</option>
                             <option value='son'>Son</option>
@@ -223,6 +226,7 @@ const postData = async (value) => {
                     <div className="field">
                         <label htmlFor="caste">Caste</label>
                         <Field name="caste" as="select" className="my-select">
+                            <option >Select One</option>                            
                             <option value="Adaviyar">Adaviyar</option>
                             <option value="Agamudayar">Agamudayar</option>
                             <option value="Arunattu Vellalar">Arunattu Vellalar</option>
@@ -282,6 +286,7 @@ const postData = async (value) => {
                     <div className="field">
                         <label htmlFor="maritalStatus">Marital Status</label>
                         <Field name="maritalStatus" as="select" className="my-select">
+                            <option >Select One</option>                            
                             <option value="Never Married">Never Married</option>
                             <option value="Widowed">Widowed</option>
                             <option value="Divorced">Divorced</option>
@@ -295,7 +300,7 @@ const postData = async (value) => {
                     </div>
                       {/* Family Status */}
                     <div className="field">
-                        <label htmlFor="familyStatus">Family Status</label>
+                        <label htmlFor="familyStatus">Family Status</label>                  
                             <Field type="radio" name="familyStatus" value="Middle Class"/>Middle Class
                             <Field type="radio" name="familyStatus" value="Upper Middle Class"/>Upper Middle Class 
                             <Field type="radio" name="familyStatus" value="Rich"/> Rich 
@@ -331,6 +336,7 @@ const postData = async (value) => {
                     <div className="field">
                         <label htmlFor="education">Highest Education</label>
                         <Field name="education" as="select" className="my-select">
+                            <option >Select One</option>          
                             <option value="B.Tech/B.E">B.Tech / B.E</option>
                             <option value="MBBS">MBBS</option>
                             <option value="B.L / M.L">B.L / M.L</option>
@@ -352,6 +358,7 @@ const postData = async (value) => {
                     <div className="field">
                         <label htmlFor="occupation">Occupation</label>
                         <Field name="occupation" as="select" className="my-select">
+                            <option >Select One</option>          
                             <option value="Engineer">Engineer</option>
                             <option value="Teacher">Teacher</option>
                             <option value="Doctor">Doctor</option>
@@ -366,6 +373,7 @@ const postData = async (value) => {
                     <div className="field">
                         <label htmlFor="income">Annual Income</label>
                         <Field name="income" as="select" className="my-select">
+                            <option >Select One</option>          
                             <option value="0-5 Lakhs">0-5 Lakhs</option>
                             <option value="5-10 Lakhs">5-10 Lakhs</option>
                             <option value="11-20 Lakhs">11-20 Lakhs</option>
