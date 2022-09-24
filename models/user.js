@@ -30,6 +30,9 @@ const userSchema = new mongoose.Schema({
        type: Date,
        default: Date.now
    },
+   avatar:{
+        type:Buffer
+    },
    updated: Date,
    about:String,
    gender:String,

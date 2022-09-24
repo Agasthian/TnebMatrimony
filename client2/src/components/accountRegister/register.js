@@ -1,6 +1,6 @@
 // import _ from 'lodash'
 import React from 'react'
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {reduxForm, Field} from 'redux-form'
 
 import './register.styles.scss'
@@ -71,7 +71,9 @@ const Register = (props) => {
     <div className=''>
         <form onSubmit={handleSubmit(values => console.log(values))}>
             {renderFields()}
-            <button type='submit' className='btn btn--orange'>Register Free</button>
+            <Link to='/signin'>
+              <button type='submit' className='btn btn--orange'>Register Free</button>
+            </Link>
         </form>
     </div>
   )

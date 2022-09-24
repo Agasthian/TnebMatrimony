@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './section3.styles.scss'
 
 const Section3 = () => {
@@ -18,7 +19,9 @@ const Section3 = () => {
             <li>Verified phone numbers</li>
             <li>Large number of profiles</li>
           </ul>
-          <button className='btn btn--orange'>Get Started - Register now</button>
+          <Link to='/signin'>
+            <button className='btn btn--orange'>Get Started - Register now</button>
+          </Link>
         </div>
       </div>
     </div>

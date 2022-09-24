@@ -20,6 +20,10 @@ const Profile = () => {
 
     const url =`${process.env.REACT_APP_API_URL}/user/${userId}`
 
+    //To display Profile photo
+    const photoUrl = userId ? `${process.env.REACT_APP_API_URL}/user/avatar/${userId}` : DefaultProfile 
+
+    /******** Fetch User info *********/
     const fetchData = async () =>{
         try {
             const response = await axios(url,{
@@ -39,6 +43,8 @@ const Profile = () => {
       //console.log('userId', userId)
       fetchData()
      },[userId])
+
+     
  
      //If  redirecttosign in state is true we naviagte to this route.
    if(redirectToSignIn) return <Navigate to='/signin' />
@@ -224,19 +230,32 @@ const Profile = () => {
             </div>
             <div className="six wide column">
                 <div className="image">
-                  <img src={DefaultProfile}/>
+                  <img 
+                    src={photoUrl} 
+                    onError={i => (i.target.src = `${DefaultProfile}`)}
+                    alt={`${profile.name}`} 
+                    />
                 </div>
                 {isAuthenticated().user && isAuthenticated().user._id === profile._id &&(
                     <>
                       <Link to={`/signupform/${profile._id}`}>
-                          <button className='ui orange button'>Fill profile Details</button>
-                      </Link>   
-                      <Link to={`/user/edit/${profile._id}`}>
+                            <button className='ui orange button'>
+                                <i class="edit icon"></i>
+                                Fill profile Details
+                            </button>
+                      </Link>  
+                      <Link to={`/user/avatar/${profile._id}`}>
+                            <button className='ui teal button'>
+                                <i class="user circle icon"></i>
+                                    Upload Photos
+                            </button>
+                        </Link>      
+                      {/* <Link to={`/user/edit/${profile._id}`}>
                         <button class="ui blue button">
                         <i class="edit icon"></i>
                             Edit Profile
                         </button>
-                      </Link>
+                      </Link> */}
 
                       <DeleteUser userId={profile._id}/>
                     </>

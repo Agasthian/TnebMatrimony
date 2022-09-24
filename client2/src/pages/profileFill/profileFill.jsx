@@ -12,7 +12,8 @@ import SubHeader from '../../components/subHeader/subHeader.component'
 const ProfileFill = () => {
 //State
 const [profile, setProfile] = useState([]);
-const [redirectToProfile, setredirectToProfile] = useState(false);
+const [redirectToProfile, setredirectToProfile] = useState(false) //Redirect after successful update to profile page
+const [redirectToSignIn, setRedirectToSignin] = useState(false) //Redirect to signin page if no autherization
 
  // console.log(useParams().userId);
  const {userId} = useParams()
@@ -33,7 +34,7 @@ const fetchData = async () =>{
          setProfile(response.data)
     } catch (error) {
         console.log(error.response)
-        //setredirectToProfile(true)
+        setRedirectToSignin(true)
         
     }
 }    
@@ -101,10 +102,10 @@ const postData = async (value) => {
       
   })
 
-    if(redirectToProfile){
-      return( <Navigate to={`/user/${userId}`} /> )
-    }
-
+    //Redirecttosign in state is true we naviagte to this route.
+    if(redirectToSignIn) return <Navigate to='/signin' />
+    // Redirects to Profile after a successfull info updates
+    if(redirectToProfile){ return( <Navigate to={`/user/${userId}`} /> )}
 
   return (
     <Layout>

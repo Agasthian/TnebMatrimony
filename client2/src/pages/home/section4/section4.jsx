@@ -1,4 +1,5 @@
 import React,{useState, useRef, useEffect} from 'react'
+import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion'
 
 import images from './images'
@@ -31,7 +32,9 @@ const Section4 = () => {
         </motion.div>
 
         <h4>Now its your turn to be happily married </h4>
-        <button className='btn btn--orange'>Register now</button>
+        <Link to='/signin' className='centerAlign'>
+          <button className='btn btn--orange'>Register now</button>
+        </Link>
       </div>
     </div>
   )

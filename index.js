@@ -10,6 +10,7 @@ const fs = require('fs')
 const cors = require('cors')
 
 
+
 /** Express App start */
 const app = express();
 
@@ -56,6 +57,9 @@ app.use(cors())
 app.use('/', postRoutes)
 app.use('/', authRoutes)
 app.use('/', userRoutes)
+
+
+
 
 //middleware - express jwt - procted route
 app.use(function (err, req, res, next) {

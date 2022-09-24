@@ -32,7 +32,7 @@ const DashCardList = () => {
 
   return (
     <div className='dashCardList'>
-      {/* {console.log('allUSersList', allUsers)} */}
+      {console.log('allUSersList', allUsers)}
       {allUsers.map((user,i)=>(
         <Card user={user} key={i}/>   
       ))}
