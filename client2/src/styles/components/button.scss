@@ -51,7 +51,8 @@
   }
   &--orange {
     color: $color-white;
-    background-image: linear-gradient(to right bottom, #f58320,#ff9902);
+    background-image: linear-gradient(to right bottom, $color-secondary-light,$color-secondary-dark);
+
 
     &::after {
       background-color: #fff;

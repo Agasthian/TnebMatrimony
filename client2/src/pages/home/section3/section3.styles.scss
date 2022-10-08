@@ -1,8 +1,12 @@
+@import '../../../styles/main.scss';
+
 .section3{
+
+    padding: 7rem 2rem;
 
     &_wrapper{
         display: flex;
-        padding: 7rem 2rem;
+        flex-wrap: wrap;
         
 
         &-photo{
@@ -19,7 +23,7 @@
             flex:1 1 60%;
             display: flex;
             flex-direction: column;
-            padding: 7rem 7rem 7rem 7rem;
+            padding: 0rem 7rem;
 
 
             h3{
@@ -61,4 +65,20 @@
             }
         }
     }
+
+    @include respond(phone-max) {
+        padding: 7rem 0rem;
+        &_wrapper{
+            &-content{
+                padding:0 4rem;
+                p{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @include respond(phone-small) {
+
+    }
+    
 }

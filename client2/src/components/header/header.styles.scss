@@ -1,8 +1,7 @@
+ @import "../../styles/main.scss";
 
 .headerWrapper{
-    
     background-color: #28b485;
-    
     width:100%;
     height:7rem;
     a{
@@ -12,7 +11,15 @@
         background-color: #ffb900;
         padding: 0.5rem 1rem;
     }
+
+    @include respond(phone-max) {
+        background-color: $color-secondary-light;
+    }
+    @include respond(phone) {
+        background-color: $color-tertiary-light;
+    }
 }
+
 .headerFlexBox{
     display: flex;
     flex-wrap: wrap;
@@ -52,7 +59,18 @@
     &_Right{
         .headerRightBtn{
             margin-left: 2rem;
-            
+        }
+    }
+
+    @include respond(phone-max) {
+        padding: 0 4rem;
+
+        &_Center{
+            ul{
+                li{
+                    margin-right: 1rem;
+                }
+            }
         }
     }
 }

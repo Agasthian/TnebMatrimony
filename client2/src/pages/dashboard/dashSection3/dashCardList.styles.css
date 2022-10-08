@@ -1,0 +1,7 @@
+.dashCardList {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=dashCardList.styles.css.map */

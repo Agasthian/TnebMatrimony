@@ -40,9 +40,11 @@ const Header = (props) => {
   return (
     <div className="headerWrapper">
       <div className='headerFlexBox'>
+
         <div className='headerFlexBox_Left'>
           <h2><Link to='/'>Sai Matrimony</Link></h2>
         </div>
+
         <div className="headerFlexBox_Center">
           <ul>
             <li><NavLink to='/'>Home</NavLink></li>
@@ -51,6 +53,7 @@ const Header = (props) => {
             <li><NavLink to='/contact'>Contact Us</NavLink></li>
           </ul>
         </div>
+        
         <div className='headerFlexBox_Right'>
           {/* {renderContent()} */}
           {/* <NavLink to='/signup'> <button className="headerRightBtn btn"> Sign Up</button> </NavLink> */}
